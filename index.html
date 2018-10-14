@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	
+	<title>Indicadores físicos</title>
+<style>
+	body{
+		font-family: 'Raleway';
+	}
+	.container{
+		margin: 20px auto;
+		background: #f2f2f2; 
+			}
+	.contenedor1{
+background: #D6EAF8; 
+	}
+	.contenedor3{
+		background: #FDEDEC;
+	}
+	.contenedor4{
+		background: #D5F5E3;
+	}
+	.menu a{
+		color:#fff;
+		text-decoration:none;
+		margin: 5px 15px;
+		text-align: ;
+		display: inline-block; 
+		font-size: 15px;		
+	}
+	.menu{
+		background:#FF9800;	
+		text-align: center;	 
+
+	}
+</style>
+</head>
+<body>
+<nav class=" menu nav-nabvar">
+	<a href="#">Propósito</a>
+	<a href="#">Indice de masa corporal</a>
+	<a href="#">Metabolismo basal</a>
+	<a href="#">Peso ideal/Magro/Graso</a>
+	<a href="#">Estado nutricional</a>
+</nav>
+	
+<div class="container">
+		<div class="row">
+			<div class="col">
+				<p class=" text-center h1 bg-danger  text-white my-2 py-1 px-1">Antropometría</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3 col-xl-3">
+				<p class=" py-2 mt-3 h2 bg-dark text-white text-center">Indice de masa corporal (IMC)</p>
+				<hr>
+				<div class="for-group mb-2">
+						<label for="nombre">Peso corporal</label>
+						<input type="number" class="form-control " placeholder=" Escribe tu peso en kilos" name="peso" id="peso">
+				</div>
+				<hr>
+				<div class="for-group mb-2">
+						<label for="nombre">Estatura (Talla o Altura)</label>
+						<input type="text" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla">
+				</div>
+				<p class="text-center text-white bg-dark">Tu IMC es:</p>
+			
+				<input type="text" id="resultado" class="form-control mb-2" readonly="" >
+			
+				
+				<input type="button" onclick="multiplicar()" class="btn btn-l bg-dark mb-2 text-white" value="Calcular" >
+				
+			</div>
+
+			<div class="col-md-5 col-xl-5">
+				<p class="px-2 py-2 mt-3 h2 bg-dark text-white text-center">Tabla de valoración del IMC</p>
+				<hr>
+				<table class="table table-striped table-bordered table-hover table-sm table-responsive-lg">
+					<thead>
+						<tr>
+							<th class="tex-center">IMC</th>
+							<th class="tex-center">Valoración</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Menor de 18,5</td>
+							<td>Peso bajo</td>
+						</tr>
+						<tr>
+							<td>Entre 18,5-24,9</td>
+							<td>Peso normal</td>
+						</tr>
+						<tr>
+							<td>Entre 25-26,9</td>
+							<td>Sobrepeso grado 1</td>
+						</tr>
+						<tr>
+							<td>Entre 27-29,9</td>
+							<td>Sobrepeso grado 2</td>
+						</tr>
+						<tr class="table-danger">
+							<td>Entre 30-34,9</td>
+							<td>Obesidad tipo 1</td>
+						</tr>
+						<tr class="table-warning">
+							<td>Entre 35-39,9</td>
+							<td>Obesidad tipo 2</td>
+						</tr>
+						<tr class="table-danger">
+							<td>Entre 40-49,9</td>
+							<td>Obesidad tipo 3 (Mórbida)</td>
+						</tr>
+						<tr class="bg-danger text-white">
+							<td>Mayor de 50</td>
+							<td>Obesidad tipo 4 (Extrema)</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+						<div class="col-md-4 col-xl-4">
+							<p class="px-2 py-2 mt-3 h2 bg-dark text-white text-center">Tu valoración</p>
+							<hr><hr>
+							<p class="text-center text-white bg-dark">El resultado de tu IMC fue:</p>
+							<input type="text"  id="valoracion"  class="form-control mb-2" readonly="">
+						</div>
+		</div>
+</div>	
+
+<div class="container contenedor1 ">
+	<div class="row">
+		<div class="colmd-4 col-xl-4">
+			<p class=" py-2 mt-5 h2 bg-primary text-white text-center">Metabolismo Basal</p>
+			<hr>
+			<div class="for-group mb-3">
+					<label for="nombre">Sexo:</label><br>
+					<input type="radio"  name="sexo" id="mujer" value="Mujer"> Mujer
+					<input type="radio"  name="sexo" id="hombe" value="Hombre"> Hombre
+			</div>
+
+			<div class="for-group mb-2">
+					<label for="nombre">Peso corporal</label>
+					<input type="text" class="form-control " placeholder=" Escribe tu peso en kilos" name="peso" id="peso2">
+			</div>
+						
+			<div class="for-group mb-2">
+					<label for="nombre">Estatura (Talla o Altura)</label>
+					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+			</div>
+		
+			<div class="for-group mb-2">
+					<label for="nombre">Edad</label>
+					<input type="text" class="form-control" placeholder=" Escribe tu edad en años" name="edad" id="edad2">
+			</div>
+
+			<p class="text-center text-white bg-info">Tu metabolismo basal es:</p>
+		
+			<input type="text" id="resultado2" class="form-control mb-2" readonly="" >
+		
+			
+			<input type="button" onclick="metabolismo()" class="btn btn-l bg-primary mb-2 text-white" value="Calcular" >			
+		</div>
+
+		<div class="col-md-4 col-xl-4">
+			<p class="px-2 py-2 mt-5 h2 bg-primary text-white text-center"> MB y Actividad física </p>
+			<hr>
+		</div>
+				
+		<div class="col-md-3 col-xl-3">
+					<p class="px-2 py-2 mt-5 h2 bg-primary text-white text-center">Tu valoración</p>
+					<hr><hr>
+					<p class="text-center text-white bg-info">El resultado de tu MB es:</p>
+					<input type="text"  id="mb"  class="form-control mb-2" readonly="">
+				</div>
+		</div>
+	</div>
+</div>
+
+<div class="container contenedor3">
+	<div class="row">
+		<div class="colmd-4 col-xl-4">
+			<p class=" py-2 mt-5 h2 bg-danger text-white text-center">Peso ideal</p>
+			<hr>
+			<div class="for-group mb-3">
+					<label for="nombre">Sexo:</label><br>
+					<input type="radio"  name="sexo" id="mujer" value="Mujer"> Mujer
+					<input type="radio"  name="sexo" id="hombe" value="Hombre"> Hombre
+			</div>
+
+			<div class="for-group mb-2">
+					<label for="nombre">Peso corporal</label>
+					<input type="text" class="form-control " placeholder=" Escribe tu peso en kilos" name="peso" id="peso2">
+			</div>
+						
+			<div class="for-group mb-2">
+					<label for="nombre">Estatura (Talla o Altura)</label>
+					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+			</div>
+		
+			<p class="text-center text-white bg-danger">Tu peso ideal es:</p>
+		
+			<input type="text" id="resultado2" class="form-control mb-2" readonly="" >
+		
+			
+			<input type="button" onclick="pesoideal()" class="btn btn-l bg-danger mb-2 text-white" value="Calcular" >			
+		</div>
+
+		<div class="col-md-4 col-xl-4">
+			<p class="px-2 py-2 mt-5 h2 bg-danger text-white text-center">Peso Óseo </p>
+			<hr>
+		</div>
+				
+		<div class="col-md-3 col-xl-3">
+					<p class="px-2 py-2 mt-5 h2 bg-danger text-white text-center">Peso graso</p>
+					<hr><hr>
+					<p class="text-center text-white bg-danger">Lorem ipsum dolor sit amet.</p>
+					<input type="text"  id="mb"  class="form-control mb-2" readonly="">
+				</div>
+		</div>
+					
+
+	</div>
+</div>
+
+<div class="container contenedor4">
+	<div class="row">
+		<div class="colmd-4 col-xl-4">
+			<p class=" py-2 mt-2 h2 bg-success text-white text-center">Estado Nutricional</p>
+			<hr>
+			<div class="for-group mb-3">
+					<label for="nombre">Sexo:</label><br>
+					<input type="radio"  name="sexo" id="mujer" value="Mujer"> Mujer
+					<input type="radio"  name="sexo" id="hombe" value="Hombre"> Hombre
+			</div>
+
+			<div class="for-group mb-2">
+					<label for="nombre">Peso corporal</label>
+					<input type="text" class="form-control " placeholder=" Escribe tu peso en kilos" name="peso" id="peso2">
+			</div>
+						
+			<div class="for-group mb-2">
+					<label for="nombre">Estatura (Talla o Altura)</label>
+					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+			</div>
+			<div class="for-group mb-2">
+					<label for="nombre">Panículo del tríceps(en cmts)</label>
+					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+			</div>
+			<div class="for-group mb-2">
+					<label for="nombre">Panículo del abdomen(en cmts)</label>
+					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+			</div>
+		
+			<p class="text-center text-white bg-success">Tu composición corporal es:</p>
+		
+			<input type="text" id="resultado2" class="form-control mb-2" readonly="" >
+		
+			
+			<input type="button" onclick="pesoideal()" class="btn btn-l bg-success mb-2 text-white" value="Calcular" >			
+		</div>
+
+		<div class="col-md-4 col-xl-4">
+			<p class="px-2 py-2 mt-2 h2 bg-success text-white text-center">Tabla comparativa </p>
+			<hr>
+		</div>
+				
+		<div class="col-md-3 col-xl-3">
+					<p class="px-2 py-2 mt-2 h2 bg-success text-white text-center">Valoración</p>
+					<hr><hr>
+					<p class="text-center text-white bg-success">Lorem ipsum dolor sit amet.</p>
+					<input type="text"  id="mb"  class="form-control mb-2" readonly="">
+				</div>
+		</div>
+					
+
+	</div>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="gimnasio.js"></script>
+
+</body>
+</html>
