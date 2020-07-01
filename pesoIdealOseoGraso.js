@@ -7,18 +7,16 @@ function pesoIdeal() {
     // let circunferencia = (circunferencia / 2)
     let resultadoPesoIdeal = ((tallaPesoIdeal-100) + ( 4 * circunferencia))/2
     resultadoPesoIdeal.toFixed(2)
-    document.getElementById('resultadoPesoIdeal').value = `${resultadoPesoIdeal}` 
+    document.getElementById('resultadoPesoIdeal').value = `${resultadoPesoIdeal} Kgs` 
 }
 let botonPesoIdeal = document.getElementById('botonPesoIdeal')
 botonPesoIdeal.addEventListener("click",pesoIdeal)
-
 // persona de 1,80 y de muñeca de 17 cm => peso ideal = 74 kilos, 
 // una mujer de 1,60 mt y muñeca de 15,5 cm => peso ideal de 61 kg.
 
 // ================================================== //
-// Masa Osea: Según Von Döbeln, modificada por Rocha
+// Peso Óseo: Según Von Döbeln, modificada por Rocha
 // la estatura, diámetro biestiloideo de la muñeca y diámetro biepicondilar del fémur
-
 //Fórmula= 3.02 x ([talla]2 X Diamétro_muñeca X Diamétro_femur x 400) elevado a la 0,712
 function boneWeight(){
 let boneSize = parseFloat(document.getElementById('tallaOsea').value)
@@ -37,34 +35,42 @@ let valor = resultboneWeight.toFixed(2)
 // console.log(valor)
 document.getElementById("resultadoPesoOseo").value = `${valor} Kgs`
 }
-
 let botonPesoOseo = document.getElementById('botonPesoOseo')
 botonPesoOseo.addEventListener("click", boneWeight)
 
 // =============================================
 // % de Grasa corporal:
 // ∑ 2pan= suma de los panículos del tríceps y pantorrilla. 
-// Sexo masculino - % de Grasa= (0,735 * ∑ de los 2 panículos) + 1.
-
+// Sexo masculino => % de Grasa= (0,735 * ∑ de los 2 panículos) + 1.
+// Sexo Femenino => % de Grasa= (0,610 * ∑ de los 2 panículos) + 5.
 function pesoGraso(){
     let paniculoTricepts = parseFloat(document.getElementById('paniculoTricepts').value)
     let paniculoPantorrilla = parseFloat(document.getElementById('paniculoPantorrilla').value)
     let sumatoria = paniculoTricepts+paniculoPantorrilla
-    console.log(sumatoria)
+    // console.log(sumatoria)
     let porcentajeGrasa = (0.735 * sumatoria) + 1
-    console.log(porcentajeGrasa)
+    // console.log(porcentajeGrasa)
     let resultPorcentajeGrasa = porcentajeGrasa.toFixed(2)
-    console.log(resultPorcentajeGrasa)
+    // console.log(resultPorcentajeGrasa)
     document.getElementById("resultadoPorcenPesoGraso").value = `${resultPorcentajeGrasa} %`
 
-    let pesoCorporal = parseFloat( document.getElementById('pesoCorporal').value)
-    let resultPesoGraso = (pesoCorporal * resultPorcentajeGrasa)/100
-    document.getElementById("resultadoPesoGraso").value = `${resultPesoGraso} Kgs`
+    let pesoCorporal = parseFloat(document.getElementById('pesoCorporal').value)
+    let resultPesoGraso = parseFloat((pesoCorporal * resultPorcentajeGrasa)/100)
+    let resultPesoGrasoFinal = resultPesoGraso.toFixed(2)
+    document.getElementById("resultadoPesoGraso").value = `${resultPesoGrasoFinal} Kgs`
 }
-
 let botonPesoGraso = document.getElementById('botonPesoGraso')
 botonPesoGraso.addEventListener("click", pesoGraso)
 
 // =============================================
 // Peso Magro:
 // PesoMagro = peso Corporal - pesoGraso
+function pesoMagro(){
+    let pesoCorporal = parseFloat(document.getElementById('pesoCorporal').value)
+    let pesoGrasa = parseFloat(document.getElementById('resultadoPesoGraso').value)
+     console.log(pesoGrasa)
+    resultPesoMagro = pesoCorporal - pesoGrasa
+    document.getElementById("resultadoPesoMagro").value = `${resultPesoMagro} Kgs`
+}
+let botonPesoMagro = document.getElementById('botonPesoMagro')
+botonPesoMagro.addEventListener('click', pesoMagro)
