@@ -41,28 +41,31 @@ background: #D6EAF8;
 		height: 200px;
 		max-height: 200px;
 	}
+	.fondo{
+		background-color: #9c1c05;
+	}
 </style>
 </head>
 
 <body>
-<nav class=" menu nav-nabvar">
-	<a href="#">Propósito</a>
-	<a href="#">Indice de masa corporal</a>
-	<a href="#">Metabolismo basal</a>
-	<a href="#">Peso ideal/Magro/Graso</a>
-	<a href="#">Estado nutricional</a>
+<nav class=" menu nav-nabvar fixed-top">
+	<a href="#" class="text-white">Propósito</a>
+	<a href="#" class="text-white">Indice de masa corporal</a>
+	<a href="#" class="text-white">Metabolismo basal</a>
+	<a href="#" class="text-white">Peso ideal/Magro/Graso</a>
+	<a href="#" class="text-white">Estado nutricional</a>
 </nav>
 	
 <div class="container">
 	<div class="row">
 			<div class="col">
-				<p class=" text-center h1 bg-danger  text-white my-2 py-1 px-1">Antropometría</p>
+				<p class=" text-center h2 bg-info text-white mt-5 py-1 px-1">Antropometría</p>
 			</div>
 	</div>
 <!--INDICE DE MASA CORPORALL-->
 	<div class="row">
-		<div class="col-md-3 col-xl-3">
-				<p class=" py-2 mt-3 h2 bg-dark text-white text-center">Indice de masa corporal (IMC)</p>
+		<div class="col-md-4 col-xl-4"> 
+				<p class=" py-2 mt-3 h4 bg-dark text-white text-center">Indice de masa corporal (IMC)</p>
 				<hr>
 				<div class="for-group mb-2">
 					<label for="nombre">Peso corporal</label>
@@ -79,8 +82,8 @@ background: #D6EAF8;
 				<input type="button" id="imc" class="btn btn-block bg-dark mb-2 text-white" value="Calcular">				
 		</div>
 
-			<div class="col-md-5 col-xl-5">
-				<p class="px-2 py-2 mt-3 h2 bg-dark text-white text-center">Tabla de comparación IMC</p>
+			<div class="col-md-4 col-xl-4">
+				<p class="px-2 py-2 mt-3 h4 bg-dark text-white text-center">Tabla de comparación IMC</p>
 				<hr>
 				<table class="table table-striped table-bordered table-hover table-sm table-responsive-lg"> 
 					<thead>
@@ -127,7 +130,7 @@ background: #D6EAF8;
 				</table>
 			</div>
 			<div class="col-md-4 col-xl-4">
-					<p class="px-2 py-2 mt-3 h2 bg-dark text-white text-center">Tu valoración</p>
+					<p class="px-2 py-2 mt-3 h4 bg-dark text-white text-center">Tu valoración</p>
 						<hr><hr>
 						<p class="text-center text-white bg-dark">El resultado de tu IMC fue:</p>
 						<p type="text" id="valoracion"  class="form-control mb-2 text-center btn btn-outline-info" readonly=""><strong>TU VALORACIÓN ES:</strong></p>
@@ -148,11 +151,11 @@ background: #D6EAF8;
 <!--METABOLISMO BASAL-->
 <div class="container contenedor1 ">
 	<div class="row">
-		<div class="colmd-4 col-xl-4">
-			<p class=" py-2 mt-5 h2 bg-primary text-white text-center">Metabolismo Basal</p>
+		<div class="col-md-4 col-xl-4">
+			<p class=" py-2 mt-3 h4 bg-primary text-white text-center">Metabolismo Basal</p>
 			<hr>
-		<form action="" id="formulario">
-			<!-- <div class="for-group mb-3">
+		<!--<form action="" id="formulario">
+			<div class="for-group mb-3">
 				<label for="gender">Sexo:</label><br>
 				<input type="radio" id="mujerMB" name="sexo" value="1" checked="checked"> Mujer
 				<input type="radio" id="hombreMB" name="sexo" value="2"> Hombre
@@ -180,7 +183,7 @@ background: #D6EAF8;
 	</form>
 
 		<div class="col-md-4 col-xl-4">
-			<p class="px-2 py-2 mt-5 h2 bg-primary text-white text-center"> MB y Actividad física </p>
+			<p class="px-2 py-2 mt-3 h4 bg-primary text-white text-center"> MB y Actividad física </p>
 			<hr>
 			<table class="table table-striped table-bordered table-hover table-sm table-responsive-lg"> 
 				<thead >
@@ -216,8 +219,8 @@ background: #D6EAF8;
 			<input type="text" id="actividad" class="form-control" placeholder=" Escribe el valor de tipo de ejercicio">
 		</div>
 				
-		<div class="col-md-3 col-xl-3">
-					<p class="px-2 py-2 mt-5 h2 bg-primary text-white text-center">Tu valoración</p>
+		<div class="col-md-4 col-xl-4">
+					<p class="px-2 py-2 mt-3 h4 bg-primary text-white text-center">Tu valoración</p>
 					<hr>
 					<div class="text-center mt-3 mb-3">
 						<input type="button" id="botonActividad" class="btn btn-l bg-success mb-2 text-white"  value="Calcular Tasa Metabólica">
@@ -233,14 +236,18 @@ background: #D6EAF8;
 <div class="container contenedor3">
 	<div class="row">
 		<div class="col-md-3 col-xl-3">
-			<p class="py-2 mt-2 h2 bg-danger text-white text-center">Peso ideal</p>
+			<p class="py-2 mt-3 h4 bg-danger text-white text-center">Peso ideal</p>
 			<hr>
 			<!-- <div class="for-group mb-3">
 					<label for="nombre">Sexo:</label><br>
 					<input type="radio"  name="sexo" id="mujer" value="Mujer"> Mujer
 					<input type="radio"  name="sexo" id="hombe" value="Hombre"> Hombre
 			</div> -->
-								
+			
+			<div class="for-group mb-2">
+				<label for="nombre">Peso</label>
+				<input type="text" id="pesoCorporal" name="estatura" class="form-control" placeholder="Peso Corporal en Kgs">
+			</div>
 			<div class="for-group mb-2">
 					<label for="nombre">Estatura (Talla o Altura)</label>
 					<input type="text" id="tallaPesoIdeal" name="estatura" class="form-control" placeholder=" Escribe tu estatura en cmts">
@@ -249,15 +256,16 @@ background: #D6EAF8;
 				<label for="nombre">Circunferencia de la muñeca</label>
 				<input type="text" id="circunferencia" name="peso" class="form-control " placeholder="Circunferencia muñeca en centimétros">
 			</div>		
-			<p class="text-center text-white bg-danger">Tu peso ideal es:</p>
+			<p class="text-center text-white bg- fondo">Tu peso ideal es:</p>
 		
 			<input type="text" id="resultadoPesoIdeal" class="form-control mb-2" readonly="" >		
 			
-			<input type="button" id="botonPesoIdeal" class="btn btn-l bg-danger mb-2 text-white" value="Calcular" >			
+			<input type="button" id="botonPesoIdeal" class="btn btn-block btn-outline-danger mb-2 text-mute" value="Calcular">
 		</div>
 
-		<div class="col-md-4 col-xl-3">
-			<p class="px-2 py-2 mt-2 h2 bg-danger text-white text-center">Peso Óseo </p>
+		<!-- Peso Óseo -->
+		<div class="col-md-3 col-xl-3">
+			<p class="px-2 py-2 mt-3 h4 bg-danger text-white text-center">Peso Óseo </p>
 			<hr>
 			<div class="for-group mb-2">
 				<label for="nombre">Estatura (Talla o Altura)</label>
@@ -271,27 +279,50 @@ background: #D6EAF8;
 				<label for="nombre">Diamétro Biepicondilar Fémur</label>
 				<input type="text" id="diametroFemur" name="diamétroFemur" class="form-control " placeholder="Diamétro del fémur">
 			</div>
-			<p class="text-center text-white bg-warning">Tu peso óseo es:</p>
-		
-			<input type="text" id="resultadoPesoOseo" class="form-control mb-2" readonly="" >		
-			
-			<input type="button" id="botonPesoOseo" class="btn btn-l bg-danger mb-2 text-white" value="Calcular" >	
+			<p class="text-center text-white bg- fondo">Tu peso óseo es:</p>		
+			<input type="text" id="resultadoPesoOseo" class="form-control mb-2" readonly="" >			
+			<input type="button" id="botonPesoOseo" class="btn btn-block bg-danger mb-2 text-white" value="Calcular" >	
 		</div>
-				
+		
+		<!-- Peso Graso -->
 		<div class="col-md-3 col-xl-3">
-			<p class="px-2 py-2 mt-2 h2 bg-danger text-white text-center">Peso Graso</p>
-			<hr>
-			<p class="text-center text-white bg-danger">Tu peso graso es:</p>
-			<input type="text"  id="mb"  class="form-control mb-2" readonly="">
+			<p class="px-2 py-2 mt-3 h4 bg-danger text-white text-center">Peso Graso</p>
+			
+			<form class="for-group mb-0" id="formulario" name="formulario">
+				<div>
+					<input type="radio" name="sexo" id="mujer" value="Mujer">
+					<label for="mujer" >Mujer</label>
+					
+					<input type="radio" name="sexo" id="hombre" value="Hombre"> 
+					<label for="hombre" >Hombre</label>	
+				</div>
+			</form>
+			<div class="for-group mb-2">
+				<label for="nombre">Panículo del tricpets</label>
+				<input type="text" id="paniculoTricepts" name="panículoTricepts" class="form-control " placeholder="Panículo del tricepts">
+			</div>
+			<div class="for-group mb-2">
+				<label for="nombre">Panículo de la pantorrilla</label>
+				<input type="text" id="paniculoPantorrilla" name="paniculoPantorrillar" class="form-control " placeholder="Panículo de la pantorrilla">
+			</div>
+
+			<p class="text-center text-white bg-danger fondo mb-2">Tu % de peso graso es:</p>
+			<input type="text"  id="resultadoPorcenPesoGraso"  class="form-control mb-2" readonly="">
+
+			<p class="text-center text-white bg- fondo mb-3">Tu peso graso en Kilos es:</p>
+			<input type="text"  id="resultadoPesoGraso"  class="form-control mb-2" readonly="">
+
+			<input type="button" id="botonPesoGraso" class="btn btn-outline-danger mb-2 text-mute" value="Calcular" >	
 		</div>
 
+		<!-- Peso Magro -->
 		<div class="col-md-3 col-xl-3">
-			<p class="px-2 py-2 mt-2 h2 bg-danger text-white text-center">Peso Magro</p>
+			<p class="px-2 py-2 mt-3 h4 bg-danger text-white text-center">Peso Magro</p>
 			<hr>
-			<p class="text-center text-white bg-danger">Tu peso magro es:</p>
-			<input type="text"  id="mb"  class="form-control mb-2" readonly="">
-		</div>
-					
+			<p class="text-center text-white bg- fondo">Tu peso magro es:</p>
+			<input type="text"  id="resultadoPesoMagro"  class="form-control mb-2" readonly="">
+			<input type="button" id="botonPesoMagro" class="btn btn-l btn-danger mb-2 text-mute" value="Calcular">
+		</div>					
 
 	</div>
 </div>
@@ -299,53 +330,57 @@ background: #D6EAF8;
 <div class="container contenedor4">
 	<div class="row">
 		<div class="colmd-4 col-xl-4">
-			<p class=" py-2 mt-2 h2 bg-success text-white text-center">Estado Nutricional</p>
+			<p class=" py-2 mt-3 h4 bg-success text-white text-center">Estado Nutricional</p>
 			<hr>
-			<div class="for-group mb-3">
-					<label for="nombre">Sexo:</label><br>
-					<input type="radio"  name="sexo" id="mujer" value="Mujer"> Mujer
-					<input type="radio"  name="sexo" id="hombe" value="Hombre"> Hombre
-			</div>
+
+		<form class="for-group mb-3" id="formulario" name="formulario">
+			<div>
+				<input type="radio" name="sexo" id="mujer" value="Mujer">
+				<label for="mujer" >Mujer</label>
+				
+				<input type="radio" name="sexo" id="hombre" value="Hombre"> 
+				<label for="hombre" >Hombre</label>	
+			</div>			
 
 			<div class="for-group mb-2">
-					<label for="nombre">Peso corporal</label>
-					<input type="text" class="form-control " placeholder=" Escribe tu peso en kilos" name="peso" id="peso2">
+				<label for="nombre">Peso corporal</label>
+				<input type="text" id="pesoNutricional"class="form-control " placeholder=" Escribe tu peso en kilos" name="peso">
 			</div>
 						
 			<div class="for-group mb-2">
-					<label for="nombre">Estatura (Talla o Altura)</label>
-					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+				<label for="nombre">Estatura (Talla o Altura)</label>
+				<input type="text"  id="tallaNutricional" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
 			</div>
 			<div class="for-group mb-2">
-					<label for="nombre">Panículo del tríceps(en cmts)</label>
-					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+				<label for="nombre">Panículo del tríceps(en cmts)</label>
+				<input type="text"  id="triceptNutricional" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
 			</div>
 			<div class="for-group mb-2">
-					<label for="nombre">Panículo del abdomen(en cmts)</label>
-					<input type="number" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura" id="talla2">
+				<label for="nombre">Panículo del abdomen(en cmts)</label>
+				<input type="text"  id="abdomenNutricional" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
 			</div>
 		
 			<p class="text-center text-white bg-success">Tu composición corporal es:</p>
 		
-			<input type="text" id="resultado2" class="form-control mb-2" readonly="" >
-		
+			<input type="text" id="resultadoNutricional" class="form-control mb-2" readonly="" >
 			
-			<input type="button" onclick="pesoideal()" class="btn btn-l bg-success mb-2 text-white" value="Calcular" >			
+			<input type="button" id="botonNutricional" class="btn btn-l bg-success mb-2 text-white" value="Calcular" >
+		</form>	
+						
 		</div>
 
 		<div class="col-md-4 col-xl-4">
-			<p class="px-2 py-2 mt-2 h2 bg-success text-white text-center">Tabla comparativa </p>
+			<p class="px-2 py-2 mt-3 h4 bg-success text-white text-center">Tabla comparativa </p>
 			<hr>
 		</div>
 				
-		<div class="col-md-3 col-xl-3">
-					<p class="px-2 py-2 mt-2 h2 bg-success text-white text-center">Valoración</p>
+		<div class="col-md-4 col-xl-4">
+					<p class="px-2 py-2 mt-3 h4 bg-success text-white text-center">Valoración</p>
 					<hr><hr>
 					<p class="text-center text-white bg-success">Lorem ipsum dolor sit amet.</p>
 					<input type="text"  id="mb"  class="form-control mb-2" readonly="">
 				</div>
-		</div>
-					
+		</div>					
 
 	</div>
 </div>
@@ -357,6 +392,7 @@ background: #D6EAF8;
 <script src="imc.js"></script>
 <script src="metabolismoBasal.js"></script>
 <script src="pesoIdealOseoGraso.js"></script>
+<script src="estadoNutricional.js"></script>
 
 </body>
 </html>
