@@ -1,5 +1,5 @@
-// alert('Funciono bien pesoIdealOseoGraso')
-// [(estatura en cm – 100) + 4 x la circunferencia de la muñeca (en cm)] / 2.
+// alert(`It´s rigth`)
+
 function pesoIdeal() {
     let tallaPesoIdeal = parseInt(document.getElementById('tallaPesoIdeal').value)
     // let tallaPI2 = (tallaPesoIdeal - 100)  
@@ -11,60 +11,66 @@ function pesoIdeal() {
 }
 let botonPesoIdeal = document.getElementById('botonPesoIdeal')
 botonPesoIdeal.addEventListener("click",pesoIdeal)
-// persona de 1,80 y de muñeca de 17 cm => peso ideal = 74 kilos, 
-// una mujer de 1,60 mt y muñeca de 15,5 cm => peso ideal de 61 kg.
 
-// ================================================== //
-// Peso Óseo: Según Von Döbeln, modificada por Rocha
-// la estatura, diámetro biestiloideo de la muñeca y diámetro biepicondilar del fémur
-//Fórmula= 3.02 x ([talla]2 X Diamétro_muñeca X Diamétro_femur x 400) elevado a la 0,712
+// =======================PESO ÓSEO=========================== //
 function boneWeight(){
-let boneSize = parseFloat(document.getElementById('tallaOsea').value)
-let boneSize2 = (Math.pow(boneSize,2)).toFixed(2)
-// console.log(boneSize2)
-let wristDiameter = (parseFloat(document.getElementById('diametroMuneca').value)/100).toFixed(2)
-// console.log(wristDiameter)
-let diameterFemur = (parseFloat(document.getElementById('diametroFemur').value)/100).toFixed(2)
-// console.log(diameterFemur)
-let result =  (boneSize2 * wristDiameter * diameterFemur * 400).toFixed(2)
-// console.log(result)
-let result2 = (result * 0.712).toFixed(2)
-// console.log(result2)
-let resultboneWeight = 3.02 * result2
-let valor = resultboneWeight.toFixed(2)
-// console.log(valor)
-document.getElementById("resultadoPesoOseo").value = `${valor} Kgs`
+    let boneSize = parseFloat(document.getElementById('tallaOsea').value)
+    let boneSize2 = (Math.pow(boneSize,2)).toFixed(2)
+    // console.log(boneSize2)
+    let wristDiameter = (parseFloat(document.getElementById('diametroMuneca').value)/100).toFixed(2)
+    // console.log(wristDiameter)
+    let diameterFemur = (parseFloat(document.getElementById('diametroFemur').value)/100).toFixed(2)
+    // console.log(diameterFemur)
+    let result =  (boneSize2 * wristDiameter * diameterFemur * 400).toFixed(2)
+    // console.log(result)
+    let result2 = (result * 0.712).toFixed(2)
+    // console.log(result2)
+    let resultboneWeight = 3.02 * result2
+    let valor = resultboneWeight.toFixed(2)
+    // console.log(valor)
+    document.getElementById("resultadoPesoOseo").value = `${valor} Kgs`
 }
 let botonPesoOseo = document.getElementById('botonPesoOseo')
 botonPesoOseo.addEventListener("click", boneWeight)
 
-// =============================================
-// % de Grasa corporal:
-// ∑ 2pan= suma de los panículos del tríceps y pantorrilla. 
-// Sexo masculino => % de Grasa= (0,735 * ∑ de los 2 panículos) + 1.
-// Sexo Femenino => % de Grasa= (0,610 * ∑ de los 2 panículos) + 5.
+// =======================PESO GRASO======================
 function pesoGraso(){
     let paniculoTricepts = parseFloat(document.getElementById('paniculoTricepts').value)
     let paniculoPantorrilla = parseFloat(document.getElementById('paniculoPantorrilla').value)
     let sumatoria = paniculoTricepts+paniculoPantorrilla
-    // console.log(sumatoria)
-    let porcentajeGrasa = (0.735 * sumatoria) + 1
-    // console.log(porcentajeGrasa)
-    let resultPorcentajeGrasa = porcentajeGrasa.toFixed(2)
-    // console.log(resultPorcentajeGrasa)
-    document.getElementById("resultadoPorcenPesoGraso").value = `${resultPorcentajeGrasa} %`
+    console.log(sumatoria)    
+    // Checkbox test
+    let formularioGrasa = document.getElementById('formularioGrasa')
+    let sexo = formularioGrasa.sexo
+            if(sexo[0].checked == true) {
+                let porcentajeGrasaMujer = (0.610 * sumatoria) + 5
+                console.log(porcentajeGrasaMujer)
+                let resultPorcentajeGrasa = porcentajeGrasaMujer.toFixed(2)
+                console.log(resultPorcentajeGrasa)
+                document.getElementById("resultadoPorcenPesoGraso").value = `${resultPorcentajeGrasa} %`
+            }else if(sexo[1].checked == true) {
+                let porcentajeGrasaHombre = (0.735 * sumatoria) + 1
+                console.log(porcentajeGrasaHombre)
+                let resultPorcentajeGrasa = porcentajeGrasaHombre.toFixed(2)
+                console.log(resultPorcentajeGrasa)
+                document.getElementById("resultadoPorcenPesoGraso").value = `${resultPorcentajeGrasa} %`
+            }else{
+                alert('Por favor selecciona un sexo')
+    }
 
     let pesoCorporal = parseFloat(document.getElementById('pesoCorporal').value)
-    let resultPesoGraso = parseFloat((pesoCorporal * resultPorcentajeGrasa)/100)
-    let resultPesoGrasoFinal = resultPesoGraso.toFixed(2)
+    // console.log(pesoCorporal)
+    let porcentajeGrasa = parseFloat(document.getElementById('resultadoPorcenPesoGraso').value)
+    // console.log(porcentajeGrasa)
+    let resultPesoGrasoKilos = parseFloat((pesoCorporal * porcentajeGrasa)/100)
+    // console.log(resultPesoGrasoKilos)
+    let resultPesoGrasoFinal = resultPesoGrasoKilos.toFixed(2)
     document.getElementById("resultadoPesoGraso").value = `${resultPesoGrasoFinal} Kgs`
 }
 let botonPesoGraso = document.getElementById('botonPesoGraso')
 botonPesoGraso.addEventListener("click", pesoGraso)
 
-// =============================================
-// Peso Magro:
-// PesoMagro = peso Corporal - pesoGraso
+// ===================PESO MAGRO=========================
 function pesoMagro(){
     let pesoCorporal = parseFloat(document.getElementById('pesoCorporal').value)
     let pesoGrasa = parseFloat(document.getElementById('resultadoPesoGraso').value)
@@ -74,3 +80,5 @@ function pesoMagro(){
 }
 let botonPesoMagro = document.getElementById('botonPesoMagro')
 botonPesoMagro.addEventListener('click', pesoMagro)
+
+
