@@ -288,7 +288,7 @@ background: #D6EAF8;
 		<div class="col-md-3 col-xl-3">
 			<p class="px-2 py-2 mt-3 h4 bg-danger text-white text-center">Peso Graso</p>
 			
-			<form class="for-group mb-0" id="formulario" name="formulario">
+			<form class="for-group mb-0" id="formularioGrasa" name="formulario">
 				<div>
 					<input type="radio" name="sexo" id="mujer" value="Mujer">
 					<label for="mujer" >Mujer</label>
@@ -296,23 +296,24 @@ background: #D6EAF8;
 					<input type="radio" name="sexo" id="hombre" value="Hombre"> 
 					<label for="hombre" >Hombre</label>	
 				</div>
+			
+				<div class="for-group mb-2">
+					<label for="nombre">Panículo del tricpets</label>
+					<input type="text" id="paniculoTricepts" name="panículoTricepts" class="form-control " placeholder="Panículo del tricepts">
+				</div>
+				<div class="for-group mb-2">
+					<label for="nombre">Panículo de la pantorrilla</label>
+					<input type="text" id="paniculoPantorrilla" name="paniculoPantorrillar" class="form-control " placeholder="Panículo de la pantorrilla">
+				</div>
+
+				<p class="text-center text-white bg-danger fondo mb-2">Tu % de peso graso es:</p>
+				<input type="text"  id="resultadoPorcenPesoGraso"  class="form-control mb-2" readonly="">
+
+				<p class="text-center text-white bg- fondo mb-3">Tu peso graso en Kilos es:</p>
+				<input type="text"  id="resultadoPesoGraso"  class="form-control mb-2" readonly="">
+
+				<input type="button" id="botonPesoGraso" class="btn btn-outline-danger mb-2 text-mute" value="Calcular" >	
 			</form>
-			<div class="for-group mb-2">
-				<label for="nombre">Panículo del tricpets</label>
-				<input type="text" id="paniculoTricepts" name="panículoTricepts" class="form-control " placeholder="Panículo del tricepts">
-			</div>
-			<div class="for-group mb-2">
-				<label for="nombre">Panículo de la pantorrilla</label>
-				<input type="text" id="paniculoPantorrilla" name="paniculoPantorrillar" class="form-control " placeholder="Panículo de la pantorrilla">
-			</div>
-
-			<p class="text-center text-white bg-danger fondo mb-2">Tu % de peso graso es:</p>
-			<input type="text"  id="resultadoPorcenPesoGraso"  class="form-control mb-2" readonly="">
-
-			<p class="text-center text-white bg- fondo mb-3">Tu peso graso en Kilos es:</p>
-			<input type="text"  id="resultadoPesoGraso"  class="form-control mb-2" readonly="">
-
-			<input type="button" id="botonPesoGraso" class="btn btn-outline-danger mb-2 text-mute" value="Calcular" >	
 		</div>
 
 		<!-- Peso Magro -->
@@ -327,52 +328,72 @@ background: #D6EAF8;
 	</div>
 </div>
 <!--ESTADO NUTRICIONAL-->
+<p class=" py-2 mt-3 h4 bg-success text-white text-center">Estado Nutricional</p>
 <div class="container contenedor4">
-	<div class="row">
+	<div class="row">		
 		<div class="colmd-4 col-xl-4">
-			<p class=" py-2 mt-3 h4 bg-success text-white text-center">Estado Nutricional</p>
+			<p class=" py-2 mt-3 h4 bg-success text-white text-center">Contextura</p>
 			<hr>
-
-		<form class="for-group mb-3" id="formulario" name="formulario">
-			<div>
-				<input type="radio" name="sexo" id="mujer" value="Mujer">
-				<label for="mujer" >Mujer</label>
-				
-				<input type="radio" name="sexo" id="hombre" value="Hombre"> 
-				<label for="hombre" >Hombre</label>	
-			</div>			
-
-			<div class="for-group mb-2">
-				<label for="nombre">Peso corporal</label>
-				<input type="text" id="pesoNutricional"class="form-control " placeholder=" Escribe tu peso en kilos" name="peso">
-			</div>
+		<!-- <form class="for-group mb-3" id="formulario" name="formulario">
+				<div>
+					<input type="radio" name="sexo" id="mujer" value="Mujer">
+					<label for="mujer" >Mujer</label>
+					
+					<input type="radio" name="sexo" id="hombre" value="Hombre"> 
+					<label for="hombre" >Hombre</label>	
+				</div>
+			</form>	 -->	
 						
 			<div class="for-group mb-2">
 				<label for="nombre">Estatura (Talla o Altura)</label>
-				<input type="text"  id="tallaNutricional" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
+				<input type="text"  id="tallaContextura" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
 			</div>
-			<div class="for-group mb-2">
-				<label for="nombre">Panículo del tríceps(en cmts)</label>
-				<input type="text"  id="triceptNutricional" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
-			</div>
-			<div class="for-group mb-2">
-				<label for="nombre">Panículo del abdomen(en cmts)</label>
-				<input type="text"  id="abdomenNutricional" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
-			</div>
-		
-			<p class="text-center text-white bg-success">Tu composición corporal es:</p>
-		
-			<input type="text" id="resultadoNutricional" class="form-control mb-2" readonly="" >
 			
-			<input type="button" id="botonNutricional" class="btn btn-l bg-success mb-2 text-white" value="Calcular" >
-		</form>	
-						
+			<div class="for-group mb-2">
+				<label for="nombre">Diámetro del Codo</label>
+				<input type="text"  id="codoContextura" class="form-control" placeholder=" Diámetro del codo en cmts" name="estatura">
+			</div>
+		
+			<p class="text-center text-white bg-success">Tu contextura es:</p>
+		
+			<input type="text" id="resultadoContextura" class="form-control mb-2" readonly="" >
+			
+			<input type="button" id="botonContextura" class="btn btn-l bg-success mb-2 text-white" value="Calcular" >	
+			
+			<table class="table table-striped table-bordered table-hover table-sm table-responsive-lg"> 
+				<thead>
+					<tr>
+						<th class="tex-center">Contextura</th>
+						<th class="tex-center">Valoración</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Menor de 25</td>
+						<td>Contextura pequeña</td>
+					</tr>
+					<tr class="table-light">
+						<td>Entre 25 - 75</td>
+						<td>Contextura mediana</td>
+					</tr>
+					<tr>
+						<td>Mayor de 75</td>
+						<td>Contextura grande</td>
+					</tr>
+				</tbody>
+			</table>
+			
 		</div>
 
 		<div class="col-md-4 col-xl-4">
-			<p class="px-2 py-2 mt-3 h4 bg-success text-white text-center">Tabla comparativa </p>
+			<p class="px-2 py-2 mt-3 h4 bg-success text-white text-center">Panículos y Circunferencias </p>
 			<hr>
+			<div class="for-group mb-2">
+				<label for="nombre">Panículo del tríceps (en cmts)</label>
+				<input type="text"  id="triceptNutricional" class="form-control" placeholder=" Escribe tu estatura en cmts" name="estatura">
+			</div>
 		</div>
+		
 				
 		<div class="col-md-4 col-xl-4">
 					<p class="px-2 py-2 mt-3 h4 bg-success text-white text-center">Valoración</p>
